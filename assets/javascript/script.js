@@ -19,7 +19,7 @@ Game win banner?
 
 
 
-/* $(document).ready(function() { */
+$(document).ready(function() {
 
 //Global Variables
 var crystalArray = [];
@@ -27,7 +27,7 @@ var userNumber = 0;
 var targetNumber = 0;
 var wins = 0;
 var losses = 0;
-var gameOver = true;
+
 
 //Page hooks
 var tarNum = $("#target-number");
@@ -39,14 +39,13 @@ var lossNumber = $("#loss");
 
 //Start the game
 function gameStart () {
-    gameOver = false;
     userNumber = 0;
-    getTargetNumber()
-    crystalFill()
+    getTargetNumber();
+    crystalFill();
     tarNum.text(targetNumber);
     userNum.text(userNumber);
-    winNumber.text(wins)
-    lossNumber.text(losses)
+    winNumber.text(wins);
+    lossNumber.text(losses);
 };
 
 //Fill crystalArray with 4 values & generates image on page
@@ -55,19 +54,22 @@ function crystalFill () {
     //Empties array
     crystalArray = [];
 
+    //Empties cryDiv
+    cryDiv.empty()
+
     // Adds 4 random numbers between 1 & 10
     for (i = 1; i <= 4; i++ ) {
-        a = Math.floor(Math.random() * 10) +1
-        crystalArray.push(a)
+        a = Math.floor(Math.random() * 10) +1;
+        crystalArray.push(a);
     }
 
     //Creates image, and assigns values from crystalArray
     for (j = 0; j < crystalArray.length; j++) {
-        a = $("<img>")
-        a.addClass("crystal-size")
-        a.attr("src", "./assets/images/crystalgif.gif")
-        a.attr("crystal-value", crystalArray[j])
-        cryDiv.append(a)
+        a = $("<img>");
+        a.addClass("crystal-size");
+        a.attr("src", "./assets/images/crystalgif.gif");
+        a.attr("crystal-value", crystalArray[j]);
+        cryDiv.append(a);
     }
 
 };
@@ -75,36 +77,46 @@ function crystalFill () {
 
 // Generates a target number, increments upon win
 function getTargetNumber (x, y) {
-    x = 30
-    y = 15
+    x = 30;
+    y = 15;
     
-    targetNumber += Math.floor(Math.random() * (x - y)) + x
-    return targetNumber
-}
+    targetNumber += Math.floor(Math.random() * (x - y)) + x;
+    return targetNumber;
+};
 
 
 //Initialize game on page load
-gameStart()
+gameStart();
 
 
 //On-click events & Game Logic
 $(".crystal-size").on("click", function() {
 
     //Get crystal values, turn into integer from string, increment userNumber
-    var crystals = ($(this).attr("crystal-value"))
-    crystals = parseInt(crystals)
-    userNumber += crystals
-    userNum.text(userNumber)
+    var crystals = ($(this).attr("crystal-value"));
+    crystals = parseInt(crystals);
+    userNumber += crystals;
+    userNum.text(userNumber);
 
     if (userNumber === targetNumber) {
-        alert()
+        alert();
+        wins += 1
+        winNumber.text(wins)
+        userNumber = 0;
+        userNum.text(userNumber)
+        getTargetNumber()
+        tarNum.text(targetNumber)
     } else if (userNumber > targetNumber) {
-        alert()
+        alert();
+        losses += 1
+        lossNumber.text(losses)
+        userNumber = 0;
+        userNum.text(userNumber)
+        targetNumber = 0
+        getTargetNumber()
+        tarNum.text(targetNumber)
     }
     
-})
+});
 
-
-
-
-/* }) */
+});
