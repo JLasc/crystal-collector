@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css?family=Markazi+Text');
+@import url('https://fonts.googleapis.com/css?family=Chela+One');
+/* Crystal Size & Colors */
+
 .crystal-size {
     width: 100px;
     height: 100px;
@@ -34,4 +39,36 @@
 }
 
 
+
+
+/* --  HTML Styling --   */
+.jumbobg {
+    background-image: url("../images/landscape.gif");
+    color: white;
+}
+
+.contbg {
+    background-color: #7B5A63;
+    border: 3px solid #ED6959
+}
+
+body {
+    background-color: black !important ;
+}
+
+h2, h3 {
+    color: #0EA5E2 !important;
+    font-family: 'Chela One', cursive !important;
+}
+
+p {
+    font-family: 'Markazi Text', serif !important;
+    font-size: 18px;
+}
+
+/* Image effects */
+img {
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
