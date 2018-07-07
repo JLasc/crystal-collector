@@ -3,3 +3,35 @@
     height: 100px;
 }
 
+/* Purple */
+.img-color1 {
+    filter:hue-rotate(30deg);
+}
+
+/* Pink */
+.img-color2 {
+    filter:hue-rotate(60deg);
+}
+
+/* Red */
+.img-color3 {
+    filter:hue-rotate(130deg);
+}
+
+/* Yellow */
+.img-color4 {
+    filter:hue-rotate(180deg);
+}
+
+/* Green */
+.img-color5 {
+    filter:hue-rotate(250deg);
+}
+
+/* Teal */
+.img-color6 {
+    filter:hue-rotate(300deg);
+}
+
+
+
