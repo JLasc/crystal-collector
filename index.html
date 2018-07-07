@@ -11,21 +11,57 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
      <body>
-
-        <!-- Top section with Game Name -->
-
-
-        <!-- Section for instructions -->
-
-
-        <!-- Game score - Win's & Losses -->
-
-
-        <!-- Same row - add random target number -->
-
-
-        <!-- Crystal Images & Incrementing score upon clicking -->
-
+        <div class="container bg-dark">
+            <!-- Top section with Game Name -->
+            
+                <div class="jumbotron text-center">
+                    <h2 class="display-4">Crystal Collector</h2>
+                    <hr class="my-3">
+                    <p class="lead">By Jon Lascaze</p>
+                </div>
+            
+            <!-- Section for instructions -->
+            <div class="row text-center">
+                <div class="card-body text-white">
+                    <h3 class="card-title">Instructions</h3>
+                    <p class="card-text">Instructions will go here.</p>
+                </div>
+            </div>
+            <!-- Row1 - Game score - Win's & Losses -->
+            <div class="row text-center">
+                <div class="col-sm-6">
+                    <div class="card-body text-white">
+                        <h3 class="card-title">Game Score</h3>
+                        <p class="card-text">Wins: <span id="wins"></span></p>
+                        <p class="card-text">Losses: <span id="loss"></span></p>
+                    </div>
+                </div>
+            
+            <!-- Row1 - Add random target number -->
+                <div class="col-sm-6">
+                    <div class="card-body text-white">
+                        <h3 class="card-title">Target Number</h3>
+                        <p class="target-number"></p>    <!-- TARGET NUM HERE -->
+                    </div>
+                </div>
+            </div>
+            <!-- Row2 - New Row Crystal Images -->
+            <div class="row text-white text-center">
+                <div class="col-sm-6">
+                    <div class="card-body">
+                        <h3 class="card-title">Crystals</h3>
+                        <div id="crystal-div"></div>  <!-- CRYSTALS HERE -->
+                    </div>
+                </div>
+            <!-- Row2 - Incrementing score upon clicking -->
+                <div class="col-sm-6">
+                    <div class="card-body">
+                        <h3 class="card-title">User's Number</h3>
+                        <div id="user-number"></div>    <!-- USER NUMBER HERE -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
