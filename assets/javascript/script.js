@@ -42,6 +42,11 @@ function gameStart () {
     gameOver = false;
     userNumber = 0;
     getTargetNumber()
+    crystalFill()
+    tarNum.text(targetNumber);
+    userNum.text(userNumber);
+    winNumber.text(wins)
+    lossNumber.text(losses)
 };
 
 //Fill crystalArray with 4 values & generates image on page
@@ -68,32 +73,35 @@ function crystalFill () {
 };
 
 
-// Generates a target number between 30-50, increments upon win
-function getTargetNumber () {
-
+// Generates a target number, increments upon win
+function getTargetNumber (x, y) {
+    x = 30
+    y = 15
+    
+    targetNumber += Math.floor(Math.random() * (x - y)) + x
+    return targetNumber
 }
 
 
-
-
-
-
 //Initialize game on page load
-tarNum.text(targetNumber);
-userNum.text(userNumber);
-winNumber.text(wins)
-lossNumber.text(losses)
-crystalFill()
+gameStart()
+
 
 //On-click events & Game Logic
 $(".crystal-size").on("click", function() {
 
+    //Get crystal values, turn into integer from string, increment userNumber
     var crystals = ($(this).attr("crystal-value"))
     crystals = parseInt(crystals)
-
     userNumber += crystals
-
     userNum.text(userNumber)
+
+    if (userNumber === targetNumber) {
+        alert()
+    } else if (userNumber > targetNumber) {
+        alert()
+    }
+    
 })
 
 
