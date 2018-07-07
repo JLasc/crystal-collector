@@ -1,22 +1,3 @@
-/* 
-Psuedo Code:
-
-- Game initializes upon page load - function that resets totals and chooses new values
-- Computer will pick a random target number using math.random 30-50 (keep this range, and increment on new game)
-- User will be shown 4 crystals, and each has a hidden value to the user (array with 4 random numbers, use for loop to assign img & value)
-- If the user can match the target number, then win, else loss. Loss is if user goes over target number.
-- Game resets on win/loss 
-
-
-** Extras ** 
-
-Sound for win & loss
-Sound for crystal click
-Game loss banner display? 
-Game win banner?
-
-*/
-
 $(document).ready(function() {
 
 //Global Variables
@@ -27,6 +8,12 @@ var wins = 0;
 var losses = 0;
 var colorArray = ["img-color1", "img-color2", "img-color3", "img-color4", "img-color5", "img-color6"];
 var imageColor;
+
+
+//Sound effects
+var clickAudio = new Audio('./assets/sounds/crystalclick.mp3')
+var winAudio = new Audio('./assets/sounds/crystalwin.mp3')
+var loseAudio = new Audio('./assets/sounds/crystallose.mp3')
 
 
 //Page hooks
@@ -46,15 +33,16 @@ function gameStart () {
     userNum.text(userNumber);
     winNumber.text(wins);
     lossNumber.text(losses);
-    
+
 //On-click events & Game Logic
 $(".crystal-size").on("click", function() {
+    
     //Get crystal values, turn into integer from string, increment userNumber
     var crystals = ($(this).attr("crystal-value"));
     crystals = parseInt(crystals);
     userNumber += crystals;
     userNum.text(userNumber);
-    console.log(crystals)
+    clickAudio.play()
 
 if (userNumber === targetNumber) {
     alert("You won!");
@@ -64,6 +52,7 @@ if (userNumber === targetNumber) {
     userNum.text(userNumber)
     tarNum.text(targetNumber)
     gameStart()
+    winAudio.play()
     
 } else if (userNumber > targetNumber) {
     alert("You lost!");
@@ -73,6 +62,7 @@ if (userNumber === targetNumber) {
     userNum.text(userNumber)
     targetNumber = 0
     tarNum.text(targetNumber)
+    loseAudio.play()
     gameStart()
         }
     })
@@ -113,10 +103,6 @@ function getTargetNumber (x, y) {
 
 //Initialize game on page load
 gameStart();
-
-
-
-
 
 
 });
