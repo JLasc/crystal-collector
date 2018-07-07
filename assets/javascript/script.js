@@ -18,6 +18,7 @@ Game win banner?
 */
 
 
+
 /* $(document).ready(function() { */
 
 //Global Variables
@@ -60,12 +61,11 @@ function crystalFill () {
         a = $("<img>")
         a.addClass("crystal-size")
         a.attr("src", "./assets/images/crystalgif.gif")
-        a.attr("crystal-values", crystalArray[j])
+        a.attr("crystal-value", crystalArray[j])
         cryDiv.append(a)
     }
 
 };
-
 
 
 // Generates a target number between 30-50, increments upon win
@@ -74,10 +74,7 @@ function getTargetNumber () {
 }
 
 
-//Game Logic
 
-
-//On-click events
 
 
 
@@ -86,5 +83,20 @@ tarNum.text(targetNumber);
 userNum.text(userNumber);
 winNumber.text(wins)
 lossNumber.text(losses)
+crystalFill()
+
+//On-click events & Game Logic
+$(".crystal-size").on("click", function() {
+
+    var crystals = ($(this).attr("crystal-value"))
+    crystals = parseInt(crystals)
+
+    userNumber += crystals
+
+    userNum.text(userNumber)
+})
+
+
+
 
 /* }) */
