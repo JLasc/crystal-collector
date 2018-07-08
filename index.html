@@ -11,30 +11,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
      <body>
-        <div class="container bg-dark">
+        
+        <div class="container contbg">
             <!-- Top section with Game Name -->
             
-                <div class="jumbotron text-center">
+                <div class="jumbotron text-center jumbobg">
                     <h2 class="display-4">Crystal Collector</h2>
                     <hr class="my-3">
-                    <p class="lead">By Jon Lascaze</p>
                 </div>
             
             <!-- Section for instructions -->
             <div class="row text-center">
                 <div class="card-body text-white">
                     <h3 class="card-title">Instructions</h3>
-                    <p class="card-text">Instructions will go here.</p>
+                    <p class="card-text">
+                        <ul>
+                            <li>Click on the crystals below to match the target number.</li>
+                            <li>Each crystal is assigned a random value.</li>
+                            <li>If you go over the target number. It's game over!</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             <!-- Row1 - Game score - Win's & Losses -->
             <div class="row text-center">
                 <div class="col-sm-6">
                     <div class="card-body text-white">
-                        <h3 class="card-title">Game Score</h3>
+                        <h3 class="card-title">Scoreboard</h3>
                         <p class="card-text">Wins: <span id="wins"></span></p> <!-- WINS HERE -->
                         <p class="card-text">Losses: <span id="loss"></span></p> <!-- LOSS HERE -->
-                        <p class="card-text"><span id="win-lose"></span></p> <!-- You Win/ You Lose text here -->
                     </div>
                 </div>
             
@@ -51,19 +56,20 @@
                 <div class="col-sm-6">
                     <div class="card-body">
                         <h3 class="card-title">Crystals</h3>
+                        <hr class="hr1">
                         <div id="crystal-div"></div>  <!-- CRYSTALS HERE -->
                     </div>
                 </div>
             <!-- Row2 - Incrementing score upon clicking -->
                 <div class="col-sm-6">
                     <div class="card-body">
-                        <h3 class="card-title">User's Number</h3>
+                        <h3 class="card-title">User Count</h3>
                         <div id="user-number"></div>    <!-- USER NUMBER HERE -->
                     </div>
                 </div>
             </div>
         </div>
-
+   
 
 
       
