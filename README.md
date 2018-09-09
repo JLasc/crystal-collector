@@ -1,6 +1,6 @@
 # Crystal Collector
 
-Welcome to my game!
+Crystal collector is a game in which the user tries to match the crystal values to the target score for each round. The crystals values are automatically assigned and will change their value each time the user wins or loses.
 
 # Instructions:
 
