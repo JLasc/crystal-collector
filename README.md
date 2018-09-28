@@ -17,7 +17,7 @@ Crystal collector is a game in which the user tries to match the crystal values 
 
 # How to Play
 
-- http://jlasc.github.io/unit-4-game
+- http://jlasc.github.io/crystal-collector
 
 ## Built With
 
